@@ -1,4 +1,6 @@
 import 'package:bank_sha/shared/theme.dart';
+import 'package:bank_sha/ui/pages/sign_in_page.dart';
+import 'package:bank_sha/ui/widgets/buttons.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 
@@ -10,18 +12,20 @@ class OnboardingPage extends StatefulWidget {
 }
 
 class _OnboardingPageState extends State<OnboardingPage> {
-  int currentIndex = 0;
   CarouselController carouselController = CarouselController();
-  List<String> titles = [
-    'Grow Your\nFinancial Today',
-    'Build From\nZero to Freedom',
-    'Start Together',
-  ];
+  int currentIndex = 0;
   List<String> subtitles = [
     'Our system is helping you to\nachieve a better goal',
     'We provide tips for you so that\nyou can adapt easier',
     'We will guide you to where\nyou wanted it too',
   ];
+
+  List<String> titles = [
+    'Grow Your\nFinancial Today',
+    'Build From\nZero to Freedom',
+    'Start Together',
+  ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -92,9 +96,42 @@ class _OnboardingPageState extends State<OnboardingPage> {
                   ),
                   textAlign: TextAlign.center,
                 ),
-                const SizedBox(
-                  height: 50,
+                SizedBox(
+                  height: currentIndex == 2 ? 38 :50,
                 ),
+                currentIndex  == 2 ?
+                Column(
+                  children: [
+                    CustomFilledButton(title: 'Get Started',
+                    onPressed: (){},),
+                    const SizedBox(
+                      height: 20,
+                    ),
+                    SizedBox(
+                      width: double.infinity,
+                      height: 24,
+                      child: TextButton(
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: 
+                              (context)=> const SignInPage(),),);
+                        },
+                        style: TextButton.styleFrom(
+                          padding: EdgeInsets.zero,
+                        ),
+                        child: Text(
+                          'Sign in',
+                          style: greyTextStyle.copyWith(
+                            fontSize: 16,
+                            fontWeight: reguler,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
+                ):
                 Row(
                   children: [
                     Container(
@@ -137,26 +174,12 @@ class _OnboardingPageState extends State<OnboardingPage> {
                       ),
                     ),
                     const Spacer(),
-                    SizedBox(
-                      width: 150,
-                      height: 50,
-                      child: TextButton(
-                        onPressed: () {
-                          carouselController.nextPage();
-                        },
-                        style: TextButton.styleFrom(
-                            backgroundColor: purpleColor,
-                            shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(56))),
-                        child: Text(
-                          'Continue',
-                          style: whiteTextStyle.copyWith(
-                            fontSize: 16,
-                            fontWeight: semiBold,
-                          ),
-                        ),
-                      ),
-                    )
+                    CustomFilledButton(title: 'Continue',
+                    width: 150,
+                    onPressed: (){
+                        carouselController.nextPage();
+                    },
+                    ),
                   ],
                 ),
               ],
