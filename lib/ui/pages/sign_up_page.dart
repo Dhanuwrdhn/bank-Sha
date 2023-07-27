@@ -73,7 +73,7 @@ class SignUpPage extends StatelessWidget {
           ),
         ),
         const SizedBox(
-          height: 50,
+          height: 30,
           ),
         CustomTextButton(title: 'Sign In  ',
         onPressed: () {
