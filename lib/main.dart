@@ -1,9 +1,19 @@
+import 'package:bank_sha/ui/pages/home_page.dart';
 import 'package:bank_sha/ui/pages/onboarding_page.dart';
+import 'package:bank_sha/ui/pages/pin_page.dart';
+import 'package:bank_sha/ui/pages/profile_edit_page.dart';
+import 'package:bank_sha/ui/pages/profile_edit_pin_page.dart';
+import 'package:bank_sha/ui/pages/profile_page.dart';
+import 'package:bank_sha/ui/pages/profile_success_edit_page.dart';
 import 'package:bank_sha/ui/pages/sign_in_page.dart';
 import 'package:bank_sha/ui/pages/sign_up_page.dart';
 import 'package:bank_sha/ui/pages/sign_up_set_ktp_page.dart';
 import 'package:bank_sha/ui/pages/sign_up_set_profile_page.dart';
+import 'package:bank_sha/ui/pages/sign_up_success_page.dart';
 import 'package:bank_sha/ui/pages/splash_page.dart';
+import 'package:bank_sha/ui/pages/topup_amount_page.dart';
+import 'package:bank_sha/ui/pages/topup_page.dart';
+import 'package:bank_sha/ui/pages/topup_success.dart';
 import 'package:flutter/material.dart';
 
 void main() => runApp(const MyApp());
@@ -18,10 +28,20 @@ class MyApp extends StatelessWidget {
       routes: {
         '/': (context) =>const SplashPage(),
         '/onboarding': (context) => const OnboardingPage(),
+        '/home':(context) => const HomePage(),
         '/sign-in': (context) => const SignInPage(),
         '/sign-up':(context) => const SignUpPage(),
         '/sign-up-set-profile':(context) => const SignUpSetProfilePage(),
         '/sign-up-set-ktp':(context) => const SignUpSetKtpPage(),
+        '/sign-up-success':(context) => const SignUpSuccessPage(),
+        '/profile':(context) => const ProfilePage(),
+        '/profile-edit':(context) => const ProfileEditPage(),
+        '/edit-pin':(context) => const ProfileEditPinPage(),
+        '/profile-edit-success':(context) => const ProfileEditSuccessPage(),
+        '/pin':(context) => const PinPage(),
+        '/topup':(context) => const TopUpPage(),
+        '/topup-amount':(context) => const TopUpAmountPage(),
+        '/topup-success':(context) => const TopUpSuccessPage(),
       },
     );
   }

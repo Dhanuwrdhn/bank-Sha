@@ -9,7 +9,6 @@ class SignUpSetProfilePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: lightBackgroundColor,
       body: ListView(
         padding:const EdgeInsets.symmetric(
           horizontal: 24,
@@ -29,7 +28,7 @@ class SignUpSetProfilePage extends StatelessWidget {
             ),
         ),
         ),
-        Text('Join Us to Unlock\nYour',
+        Text('Join Us to Unlock\nYour Growth',
         style: blackTextStyle.copyWith(
           fontSize: 20,
           fontWeight: semiBold,

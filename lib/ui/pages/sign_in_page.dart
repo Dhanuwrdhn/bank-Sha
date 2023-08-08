@@ -8,7 +8,6 @@ class SignInPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: lightBackgroundColor,
       body: ListView(
         padding:const EdgeInsets.symmetric(
           horizontal: 24,
@@ -71,7 +70,7 @@ class SignInPage extends StatelessWidget {
               ),
             CustomFilledButton(title: 'Sign In',
             onPressed: () {
-              
+              Navigator.pushNamedAndRemoveUntil(context, '/home', (route) => false);
             },)
             ],
           ),
