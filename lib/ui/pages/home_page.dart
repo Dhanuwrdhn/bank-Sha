@@ -282,7 +282,7 @@ Widget buildServices(BuildContext context){
                 iconUrl: 'assets/ic_send.png',
                 title: 'Send',
                 onTap: () {
-                
+                  Navigator.pushNamed(context, '/transfer');
                 },
               ),
               HomeServicesItem(
