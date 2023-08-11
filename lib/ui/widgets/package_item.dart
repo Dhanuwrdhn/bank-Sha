@@ -1,8 +1,10 @@
+import 'package:bank_sha/shared/shared_method.dart';
 import 'package:flutter/material.dart';
 
 import '../../shared/theme.dart';
-class PackageItem extends StatelessWidget { final String amount;
-  final String price;
+class PackageItem extends StatelessWidget { 
+  final int amount;
+  final int price;
   final bool isSelected;
 
   const PackageItem({
@@ -42,7 +44,7 @@ class PackageItem extends StatelessWidget { final String amount;
         const SizedBox(
           height: 2,
         ),
-        Text('RP $price',
+        Text(formatCurrency(price),
         style: greyTextStyle.copyWith(
           fontSize: 12,
         ),

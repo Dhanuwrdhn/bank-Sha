@@ -55,21 +55,21 @@ class DataPackagePage extends StatelessWidget {
           runSpacing: 17,
           children:const [
             PackageItem(
-              amount: '10',
-              price: '275.000',
+              amount: 10,
+              price: 275000,
               ),
               PackageItem(
-              amount: '25',
-              price: '430.000',
+              amount: 25,
+              price: 430000,
               isSelected: true,
               ),
               PackageItem(
-              amount: '40',
-              price: '2.500.000',
+              amount: 40,
+              price: 2500000,
               ),
               PackageItem(
-              amount: '99',
-              price: '5.000.000',
+              amount: 99,
+              price: 5000000,
               ),
           ],
         ),
