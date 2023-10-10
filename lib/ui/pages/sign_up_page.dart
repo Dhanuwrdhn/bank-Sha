@@ -1,5 +1,7 @@
 import 'package:bank_sha/blocs/auth/auth_bloc.dart';
+import 'package:bank_sha/models/sign_up_form_model.dart';
 import 'package:bank_sha/shared/shared_method.dart';
+import 'package:bank_sha/ui/pages/sign_up_set_profile_page.dart';
 import 'package:flutter/material.dart';
 import 'package:bank_sha/shared/theme.dart';
 import 'package:bank_sha/ui/widgets/buttons.dart';
@@ -37,8 +39,18 @@ class _SignUpPageState extends State<SignUpPage> {
             showCustomSnackBar(context, state.e);
           }
           if(state is AuthCheckEmailSuccess ){
-            Navigator.pushNamed(context, '/sign-up-set-profile');
-
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => SignUpSetProfilePage(
+                  data: SignUpFormModel(
+                    name: nameController.text,
+                    email: emailController.text,
+                    password: passwordController.text,
+                  ),
+                ),
+              )
+            );
           }
         },
         builder: (context, state) {
