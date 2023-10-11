@@ -36,8 +36,6 @@ class _SignUpSetProfilePageState extends State<SignUpSetProfilePage> {
 
   @override
   Widget build(BuildContext context) {
-
-    print(widget.data.toJson());
     return Scaffold(
       body: ListView(
         padding:const EdgeInsets.symmetric(
